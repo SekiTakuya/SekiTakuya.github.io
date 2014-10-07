@@ -1,3 +1,1 @@
-SekiTakuya.github.io
-====================
 Note
