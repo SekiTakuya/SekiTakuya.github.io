@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Title
+layout: nil
 ---
 {% include stylesheets/stylesheet.css %}
 {% include stylesheets/pygment_trac.css %}
