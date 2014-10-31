@@ -6,6 +6,7 @@
     padding-bottom: 40px;
     background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
     border-bottom: solid 1px #275da1;
+    font-family: 'Myriad';
 
     //border-top: 5px solid $grey-color-dark;
     //border-bottom: 1px solid $grey-color-light;
@@ -16,7 +17,6 @@
 }
 
 .site-title {
-    font-family: 'Myriad';
     letter-spacing: -1px;
     font-size: 72px;
     line-height: 1;
@@ -42,7 +42,6 @@
     }
 
     .page-link {
-        font-family: 'Myriad';
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
