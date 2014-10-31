@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+.site-title, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -71,7 +71,7 @@ header {
   border-bottom: solid 1px #275da1;
 }
 
-header h1 {
+.site-title {
   letter-spacing: -1px;
   font-size: 72px;
   color: #fff;
@@ -223,7 +223,7 @@ form {
 
 /* GENERAL ELEMENT TYPE STYLES */
 
-#main-content h1 {
+#main-content .site-title {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 2.8em;
   letter-spacing: -1px;
@@ -379,10 +379,10 @@ footer a:hover {
   .inner {
     width: 740px;
   }
-  header h1, header h2 {
+  .site-title, header h2 {
     width: 340px;
   }
-  header h1 {
+  .site-title {
     font-size: 60px;
   }
   header h2 {
@@ -414,10 +414,10 @@ footer a:hover {
   header .inner {
     position: relative;
   }
-  header h1, header h2 {
+  .site-title, header h2 {
     width: 100%;
   }
-  header h1 {
+  .site-title {
     font-size: 48px;
   }
   header h2 {
@@ -459,7 +459,7 @@ footer a:hover {
   aside#sidebar a.button {
     display: none;
   }
-  #main-content h1:before,
+  #main-content .site-title:before,
   #main-content h2:before,
   #main-content h3:before,
   #main-content h4:before,
