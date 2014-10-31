@@ -4,7 +4,6 @@
 .site-header {
     padding-top: 40px;
     padding-bottom: 40px;
-    font-family: 'Myriad';
     background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
     border-bottom: solid 1px #275da1;
 
@@ -17,6 +16,7 @@
 }
 
 .site-title {
+    font-family: 'Myriad';
     letter-spacing: -1px;
     font-size: 72px;
     color: #fff;
@@ -62,13 +62,30 @@
     }
 
     .page-link {
-        color: $text-color;
+        font-family: 'Myriad';
+        color: $fff;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
             margin-left: 20px;
         }
+    }
+    
+    .page-link:link {
+        color: #fff;
+    }
+    
+    .page-link:visited {
+        color: #fff;
+    }
+    
+    .page-link:hover {
+        color: #fff;
+    }
+    
+    .page-link:active {
+        color: #fff;
     }
 
     @include media-query($on-palm) {
