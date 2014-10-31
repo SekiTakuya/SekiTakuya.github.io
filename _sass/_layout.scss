@@ -6,7 +6,7 @@
     padding-bottom: 40px;
     background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
     border-bottom: solid 1px #275da1;
-    font-family: 'Myriad';
+    font-family: $base-font-family;
 
     //border-top: 5px solid $grey-color-dark;
     //border-bottom: 1px solid $grey-color-light;
@@ -42,6 +42,7 @@
     }
 
     .page-link {
+        font-family: $base-font-family;
         line-height: $base-line-height;
         font-weight: bold;
         
