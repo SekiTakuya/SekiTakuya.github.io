@@ -19,38 +19,18 @@
     font-family: 'Myriad';
     letter-spacing: -1px;
     font-size: 72px;
-    color: #fff;
     line-height: 1;
     margin-bottom: 0.2em;
     width: 540px;
-    text-decoration: none;
-    //font-size: 26px;
-    //line-height: 56px;
-    //letter-spacing: -1px;
-    //margin-bottom: 0;
-    //float: left;
 
-    //&,
-    //&:visited {
-    //    color: $grey-color-dark;
-    //}
-}
-
-.site-title:link {
-    color: #fff;
-}
-
-.site-title:visited {
-    color: #fff;
-}
-
-.site-title:hover {
-    color: #fff;
-    text-decoration: none;
-}
-
-.site-title:active {
-    color: #fff;
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        color: #fff;
+        text-decoration: none;
+    }
 }
 
 .site-nav {
@@ -70,22 +50,15 @@
         &:not(:first-child) {
             margin-left: 20px;
         }
-    }
-    
-    .page-link:link {
-        color: #fff;
-    }
-    
-    .page-link:visited {
-        color: #fff;
-    }
-    
-    .page-link:hover {
-        color: #fff;
-    }
-    
-    .page-link:active {
-        color: #fff;
+        
+        &,
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+            color: #fff;
+            text-decoration: none;
+        }
     }
 
     @include media-query($on-palm) {
