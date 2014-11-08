@@ -10,4 +10,4 @@ layout: default
 - v1
   - v2
 
-[link](about.md)
+[link](about)

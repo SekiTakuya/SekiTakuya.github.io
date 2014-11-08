@@ -12,13 +12,73 @@
           <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
         </svg>
       </a>
-
+	{% assign currentSegments = page.url | split:"/" %}
+	{% assign currentFirstSegment = "" %}
+	{% for segment in currentSegments %}
+		{% if segment != empty %}
+			{% if currentFirstSegment == empty %}
+				{% assign currentFirstSegment = segment %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
       <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
+        <ul class="ddmenu">
+		{% assign category = "" %}
+		{% assign hasUlStartTag = false %}
+		{% for subPage in site.pages %}
+			{% if subPage.title %}
+				{% assign segments = subPage.permalink | split:"/" %}
+				{% assign firstSegment = "" %}
+				{% assign sementCount = 0 %}
+				{% for segment in segments %}
+					{% if segment != empty %}
+						{% assign sementCount = sementCount | plus:1 %}
+						{% if firstSegment == empty %}
+							{% assign firstSegment = segment %}
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				{% if category != firstSegment %}
+					{% if category != empty %}
+						{% if hasUlStartTag == true %}
+			    </ul>
+			    		{% endif %}
+			</li>
+					{% endif %}
+					{% assign category = firstSegment %}
+	        <li class="ddmenu-root">
+	        
+				{% if sementCount > 1 %}
+					{% if currentFirstSegment == firstSegment %}
+		        		<span class="ddmenu-root-link selected-category">{{category}}</span>
+					{% else %}
+		        		<span class="ddmenu-root-link">{{category}}</span>
+					{% endif %}
+				{% else %}
+					{% if currentFirstSegment == firstSegment %}
+	        			<a class="ddmenu-root-link selected-category" href="/{{category}}/">{{category}}</a>
+					{% else %}
+	        			<a class="ddmenu-root-link" href="/{{category}}/">{{category}}</a>
+					{% endif %}
+	        	{% endif %}
+					{% assign hasUlStartTag = false %}
+				{% endif %}
+				{% if sementCount > 1 %}
+					{% if hasUlStartTag == false %}
+				<ul>
+					{% endif %}
+					{% assign hasUlStartTag = true %}
+					<li><a href="{{ subPage.url | prepend: site.baseurl }}">{{ subPage.title }}</a></li>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		{% if category != empty %}
+			{% if hasUlStartTag == true %}
+				</ul>
+    		{% endif %}
+			</li>
+		{% endif %}
+        </ul>
       </div>
     </nav>
 

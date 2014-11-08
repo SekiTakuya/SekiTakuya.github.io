@@ -8,12 +8,6 @@
     border-bottom: solid 1px #275da1;
     font-family: $base-font-family;
 
-    //border-top: 5px solid $grey-color-dark;
-    //border-bottom: 1px solid $grey-color-light;
-    //min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
-    //position: relative;
 }
 
 .site-title {
@@ -22,7 +16,7 @@
     line-height: 1;
     margin-bottom: 0.2em;
     width: 540px;
-
+    
     &,
     &:link,
     &:visited,
@@ -32,6 +26,7 @@
         text-decoration: none;
     }
 }
+
 
 .site-nav {
     float: right;
@@ -51,14 +46,6 @@
             margin-left: 20px;
         }
         
-        &,
-        &:link,
-        &:visited,
-        &:hover,
-        &:active {
-            color: #fff;
-            text-decoration: none;
-        }
     }
 
     @include media-query($on-palm) {
@@ -105,8 +92,121 @@
         }
     }
 }
+.ddmenu{
+	display:block;
+	width:100%;
+	margin:0 auto;
+	padding:0 15px;
+	cursor:default;
+	outline:none;
+}
 
+.ddmenu-root {
+	display:block;
+	position:relative;
+	float:left;
+	text-decoration:none;
+	
+	&:hover>a,
+	&:hover>span {
+		color:#fff;
+		text-shadow: -1px -1px 0px #327dd0,
+		             -1px 1px 0px #327dd0,
+		             1px -1px 0px #327dd0,
+		             1px 1px 0px #327dd0;
+	}
+}
 
+.ddmenu-root li{
+	display:block;
+	position:relative;
+	float:left;
+	text-decoration:none;
+	
+	&:hover>a {
+		color:#ccd;
+	}
+}
+.ddmenu-root-link {
+	float:left;
+	font-weight:bold;
+	padding:0 12px;
+	
+    &,
+    &:link,
+    &:visited,
+    &:active {
+        color: #ccd;
+        text-decoration: none;
+    }
+}
+
+.selected-category {
+	font-size:30px;
+}
+
+.ddmenu-root ul li a{
+	width:100%;
+	display:block;
+	float:left;
+	text-align:left;
+	padding:0 12px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#327dd0;
+}
+
+.ddmenu-root ul li:hover>a{
+	color:#7180a0;
+	background:#d9e2ee;
+}
+
+.ddmenu-root ul{
+	position:absolute;
+	top:50px;
+	width:130px;
+	background:#fff;
+	display:none;
+	margin:0;
+	padding:7px 0;
+	list-style:none;
+	border-radius:3px;
+	border:1px solid rgba(0,0,0,0.2);
+	box-shadow:0 0 5px rgba(0,0,0,0.2);
+}
+
+.ddmenu-root ul:after{
+	content:"";
+	width:0;
+	height:0;
+	position:absolute;
+	bottom:100%;
+	left:8px;
+	border-width:0px 8px 8px 8px;
+	border-style:solid;
+	border-color:#fff transparent;
+}
+
+.ddmenu-root ul:before{
+	content:"";
+	width:0;
+	height:0;
+	position:absolute;
+	bottom:100%;
+}
+
+.ddmenu-root ul li{
+	display:block;
+	width:116px;
+	text-shadow:1px 1px 0 #fff;
+}
+
+.ddmenu-root ul li a{
+	display:block;
+	width:100%;
+	padding:6px 7px;
+	line-height:1.5em;
+}
 
 /**
  * Site footer
