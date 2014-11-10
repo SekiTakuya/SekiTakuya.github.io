@@ -11,14 +11,17 @@ function replaceRegEx(targetId, regExId, newValueId, resultId){
 }
 function getReplaceTxt(id, target, regEx, newValue){
 	document.open();
+	document.write("\"");
 	document.write(stringFormat("<input type=\"text\" id=\"target{0}\" value=\"{1}\" size=5 />", id, target));
-	document.write(".replace(/");
+	document.write("\".replace(/");
 	document.write(stringFormat("<input type=\"text\" id=\"regEx{0}\" value=\"{1}\" size=5 />", id, regEx));
 	document.write("/g, \"");
 	document.write(stringFormat("<input type=\"text\" id=\"newValue{0}\" value=\"{1}\" size=5 />", id, newValue));
 	document.write("\")");
 	document.write(stringFormat("<input type=\"button\" value=\"=\" onclick=\"replaceRegEx('target{0}','regEx{0}','newValue{0}','result{0}')\"/>", id));
+	document.write("\"");
 	document.write(stringFormat("<input type=\"text\" id=\"result{0}\" value=\"\" size=10 />", id));
+	document.write("\"");
 	document.close();
 }
 var stringFormat = function(fmt){
